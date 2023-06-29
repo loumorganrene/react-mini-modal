@@ -7,13 +7,11 @@
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "peerDependencies": {
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": ">=18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

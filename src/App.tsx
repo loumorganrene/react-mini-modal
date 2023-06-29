@@ -19,8 +19,9 @@ function App() {
           title="Test"
           content="Employee successfully added !"
           color='grey'
+          backgroundColor=''
           open={open}
-          onClose={() => setOpen(!open)}
+          onClose={() => setOpen(false)}
         />
       </div>
     </>

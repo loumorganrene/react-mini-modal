@@ -1,9 +1,17 @@
 import PropTypes from 'prop-types'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { ModalProps } from './Modal.types'
 import './Modal.css'
 
+//kanban orga etap
+//renommer class
+//scoper sur npm
+//change version pour (re)deployer
+
+//fournir doc class
+//example readme pour dif type
+//vérifier +vieil version dépendance
 function Modal({
     title,
     content,
@@ -15,22 +23,49 @@ function Modal({
     onClose
 }: ModalProps) {
 
-    const onKeyDown = (event: KeyboardEvent) => {
-        if (event.key === "Escape" || event.keyCode === 27 && open) {
-            onClose();
+    const modalRef: any = useRef()
+
+    const handleTabKey = (e: KeyboardEvent) => {
+        const focusableModalElements = modalRef.current.querySelectorAll(
+            'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select'
+        )
+        const firstElement = focusableModalElements[0]
+        const lastElement = focusableModalElements[focusableModalElements.length - 1]
+
+        const isTabPressed = e.key === "Tab" || e.keyCode === 9;
+        // if any other key is pressed
+        if (!isTabPressed) {
+            return
+        }
+
+        if (e.shiftKey) { // if shift+tab is pressed together
+            if (document.activeElement === firstElement) {
+                lastElement.focus() // focus on last focusable element
+                e.preventDefault()
+            }
+        } else { // if focus on the last focusable element
+            if (document.activeElement === lastElement) {
+                firstElement.focus() // add focus on first focusable element
+                e.preventDefault()
+            }
         }
     }
 
-    useEffect(() => {
-        document.addEventListener('keydown', onKeyDown, false)
-        return () => {
-            document.removeEventListener('keydown', onKeyDown, false)
-        }
+    const keyListenersMap = new Map([["Escape", onClose], ["Tab", handleTabKey]])
 
-    }, [open]) //eslint-disable-line
+    useEffect(() => {
+        function keyListener(e: KeyboardEvent) {
+            const listener = keyListenersMap.get(e.key)
+            return listener && listener(e)
+        }
+        document.addEventListener("keydown", keyListener)
+
+        return () => document.removeEventListener("keydown", keyListener)
+    })
 
     return open ? createPortal(
         <div
+            ref={modalRef}
             className='modal_container'
             role='dialog'
             tabIndex={-1}
@@ -40,7 +75,6 @@ function Modal({
             style={{ backgroundColor }}
         >
             <div
-                // onKeyDown={keyDownHandler}
                 className='modal'
                 style={{ width, height, color }}
             >
@@ -78,6 +112,3 @@ Modal.propTypes = {
 }
 
 export default Modal
-
-//réordonner mes idées,
-//trap focus dans la modale
