@@ -4,7 +4,7 @@
     --transparence: rgba(128, 128, 128, 0.2);
 }
 
-.modal_container {
+.modal__wrapper {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -47,26 +47,37 @@
     width: fit-content;
 }
 
-.modal_close-btn {
-    position: absolute;
-    top: 5px;
-    right: 5px;
+.modal__btn {
     font: inherit;
     color: inherit;
-    background: inherit;
+    background: var(--transparence);
     cursor: pointer;
     outline: inherit;
-    border: none;
+    border-radius: 5px;
     font-weight: 600;
     padding: .2em .6em;
 }
 
-.modal_close-btn:hover {
+.modal__btn--close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: none;
+    background: none;
+}
+
+.modal__btn--close:hover {
     border-radius: 5px;
     background-color: var(--transparence);
 }
 
-.modal_close-btn:focus,
-.modal_close-btn:focus-visible {
+.modal__btn--close:focus,
+.modal__btn--close:focus-visible {
     outline: 4px auto;
+}
+
+.modal__footer {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
 }

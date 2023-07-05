@@ -19,6 +19,7 @@ function Modal({
     width,
     color,
     backgroundColor,
+    footerButton,
     open,
     onClose
 }: ModalProps) {
@@ -54,6 +55,7 @@ function Modal({
     const keyListenersMap = new Map([["Escape", onClose], ["Tab", handleTabKey]])
 
     useEffect(() => {
+        open ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'none') 
         function keyListener(e: KeyboardEvent) {
             const listener = keyListenersMap.get(e.key)
             return listener && listener(e)
@@ -66,7 +68,7 @@ function Modal({
     return open ? createPortal(
         <div
             ref={modalRef}
-            className='modal_container'
+            className='modal__wrapper'
             role='dialog'
             tabIndex={-1}
             aria-modal
@@ -79,18 +81,19 @@ function Modal({
                 style={{ width, height, color }}
             >
                 <button
-                    className='modal_close-btn'
+                    className='modal__btn modal__btn--close'
                     type='button'
                     onClick={onClose}
                 >
                     x
                 </button>
-                <div className="modal_header">
+                <div className="modal__header">
                     <h2 className="modal_title">{title}</h2>
                 </div>
-                <div className="modal_body">
-                    <p className="modal_content">{content}</p>
+                <div className="modal__body">
+                    <p className="modal__content">{content}</p>
                 </div>
+                <div className="modal__footer">{footerButton}</div>
             </div>
         </div>, document.body
     ) : null
@@ -98,13 +101,12 @@ function Modal({
 
 Modal.propTypes = {
     title: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.element
+        PropTypes.string
     ]),
     content: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.element
+        PropTypes.string
     ]),
+    footerButton: PropTypes.element,
     height: PropTypes.string,
     width: PropTypes.string,
     open: PropTypes.bool,
