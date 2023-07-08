@@ -1,28 +1,41 @@
 {
   "name": "react-mini-modal",
-  "private": true,
-  "version": "0.0.1",
+  "version": "1.0.15",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/react-mini-modal.umd.cjs",
+  "module": "./dist/react-mini-modal.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/react-mini-modal.js"
+      },
+      "require": "./dist/react-mini-modal.umd.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
-  "dependencies": {},
-  "peerDependencies": {
-    "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": ">=18.2.0"
-  },
   "devDependencies": {
+    "@types/node": "^20.4.1",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
     "@vitejs/plugin-react-swc": "^3.0.0",
-    "eslint": "^8.38.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.3.4",
     "typescript": "^5.0.2",
-    "vite": "^4.3.9"
+    "vite": "^4.3.9",
+    "vite-plugin-dts": "^3.1.1"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": ">=18.2.0"
   }
 }

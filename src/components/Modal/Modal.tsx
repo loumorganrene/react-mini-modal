@@ -4,14 +4,6 @@ import { createPortal } from 'react-dom'
 import { ModalProps } from './Modal.types'
 import './Modal.css'
 
-//kanban orga etap
-//renommer class
-//scoper sur npm
-//change version pour (re)deployer
-
-//fournir doc class
-//example readme pour dif type
-//vérifier +vieil version dépendance
 function Modal({
     title,
     content,

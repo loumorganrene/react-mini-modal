@@ -71,8 +71,8 @@
     background-color: var(--transparence);
 }
 
-.modal__btn--close:focus,
-.modal__btn--close:focus-visible {
+.modal__btn:focus,
+.modal__btn:focus-visible {
     outline: 4px auto;
 }
 

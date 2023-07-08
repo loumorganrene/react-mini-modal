@@ -4,14 +4,19 @@
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
+    "types": [ "node", "vite/client" ],
     "skipLibCheck": true,
+    
 
     /* Bundler mode */
+    "baseUrl": "./",
+    "outDir": "dist",
+    "declaration": true,
     "moduleResolution": "bundler",
+    "emitDeclarationOnly": true,
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "react-jsx",
 
     /* Linting */

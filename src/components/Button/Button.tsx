@@ -1,7 +1,4 @@
-interface ButtonProps {
-    content: string,
-    onClick: () => void | void
-}
+import { ButtonProps } from "./Button.types"
 
 function Button({ onClick, content }: ButtonProps) {
     return (

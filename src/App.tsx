@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Modal from './components/Modal/Modal'
 import './App.css'
-import Button from './components/Button'
+import Button from './components/Button/Button'
 
 function App() {
   const [open, setOpen] = useState(false)
