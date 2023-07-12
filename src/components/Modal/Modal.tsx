@@ -47,7 +47,7 @@ function Modal({
     const keyListenersMap = new Map([["Escape", onClose], ["Tab", handleTabKey]])
 
     useEffect(() => {
-        open ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'none') 
+        open === true ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'none') 
         function keyListener(e: KeyboardEvent) {
             const listener = keyListenersMap.get(e.key)
             return listener && listener(e)
@@ -58,7 +58,8 @@ function Modal({
     })
 
     return open ? createPortal(
-        <div
+        <div className='modal__background--blurry'>
+            <div
             ref={modalRef}
             className='modal__wrapper'
             role='dialog'
@@ -87,7 +88,8 @@ function Modal({
                 </div>
                 <div className="modal__footer">{footerButton}</div>
             </div>
-        </div>, document.body
+        </div>
+    </div>, document.body
     ) : null
 }
 

@@ -20,7 +20,6 @@ function App() {
           title="Modal open"
           content="You've successfully opened this modal !"
           color='grey'
-          backgroundColor=''
           footerButton={<Button onClick={() => setOpen(false)} content="Super !" />}
           open={open}
           onClose={() => setOpen(false)}
