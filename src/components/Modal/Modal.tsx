@@ -52,6 +52,7 @@ function Modal({
     const keyListenersMap = new Map([["Escape", onClose], ["Tab", handleTabKey]])
 
     useEffect(() => {
+        document.body.style.overflow = open === false ? "unset" : "hidden"
 
         function keyListener(e: KeyboardEvent) {
             const listener = keyListenersMap.get(e.key)
