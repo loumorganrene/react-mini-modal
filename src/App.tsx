@@ -10,6 +10,7 @@ function App() {
     <>
       <div className="App">
         <h1>Usage example</h1>
+        <input></input>
         <button
           className='modal__btn'
           type='button'

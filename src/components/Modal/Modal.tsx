@@ -42,16 +42,16 @@ function Modal({
                 e.preventDefault()
             }
         }
+
+        if (modalRef.current && !modalRef.current.contains(e.target)) {
+            firstElement.focus()
+            e.preventDefault()
+        }
     }
 
     const keyListenersMap = new Map([["Escape", onClose], ["Tab", handleTabKey]])
 
     useEffect(() => {
-        document.body.style.overflow = open === false ? "unset" : "hidden"
-        
-        open === true 
-        ? document.body.firstElementChild?.setAttribute("inert", "")
-        : document.body.firstElementChild?.removeAttribute("inert")
 
         function keyListener(e: KeyboardEvent) {
             const listener = keyListenersMap.get(e.key)
@@ -59,6 +59,7 @@ function Modal({
         }
         window.addEventListener("keydown", keyListener)
         return () => window.removeEventListener("keydown", keyListener)
+
     }, [open])
 
     return open ? createPortal(
