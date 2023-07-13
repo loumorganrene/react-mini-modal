@@ -47,24 +47,28 @@ function Modal({
     const keyListenersMap = new Map([["Escape", onClose], ["Tab", handleTabKey]])
 
     useEffect(() => {
-        open === true ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'none') 
+        document.body.style.overflow = open === false ? "unset" : "hidden"
+        
+        open === true 
+        ? document.body.firstElementChild?.setAttribute("inert", "")
+        : document.body.firstElementChild?.removeAttribute("inert")
+
         function keyListener(e: KeyboardEvent) {
             const listener = keyListenersMap.get(e.key)
             return listener && listener(e)
         }
-        document.addEventListener("keydown", keyListener)
-
-        return () => document.removeEventListener("keydown", keyListener)
-    })
+        window.addEventListener("keydown", keyListener)
+        return () => window.removeEventListener("keydown", keyListener)
+    }, [open])
 
     return open ? createPortal(
         <div className='modal__background--blurry'>
             <div
             ref={modalRef}
             className='modal__wrapper'
-            role='dialog'
+            role='alertdialog'
             tabIndex={-1}
-            aria-modal
+            aria-modal={true}
             aria-labelledby={title}
             aria-describedby={content}
             style={{ backgroundColor }}

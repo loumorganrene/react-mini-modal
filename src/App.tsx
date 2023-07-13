@@ -9,6 +9,7 @@ function App() {
   return (
     <>
       <div className="App">
+        <h1>Usage example</h1>
         <button
           className='modal__btn'
           type='button'

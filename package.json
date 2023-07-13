@@ -1,6 +1,6 @@
 {
   "name": "react-mini-modal",
-  "version": "1.0.15",
+  "version": "1.0.22",
   "type": "module",
   "files": [
     "dist"

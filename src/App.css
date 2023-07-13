@@ -6,7 +6,6 @@
 }
 
 body {
-  overflow: unset;
   font-family: Roboto, Arial, sans-serif;
   height: 100vh;
   display: flex;
