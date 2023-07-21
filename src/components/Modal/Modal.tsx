@@ -64,7 +64,7 @@ function Modal({
     }, [open])
 
     return open ? createPortal(
-        <div className='modal__background--blurry'>
+        <div className='modal__background modal__background--blurry'>
             <div
             ref={modalRef}
             className='modal__wrapper'
@@ -87,7 +87,7 @@ function Modal({
                     x
                 </button>
                 <div className="modal__header">
-                    <h2 className="modal_title">{title}</h2>
+                    <h2 className="modal__title">{title}</h2>
                 </div>
                 <div className="modal__body">
                     <p className="modal__content">{content}</p>
