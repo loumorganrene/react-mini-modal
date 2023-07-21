@@ -1,6 +1,10 @@
 {
   "name": "react-mini-modal",
-  "version": "1.0.26",
+  "description": "A minimalist and easy-to-style modal React component",
+  "keywords": ["modal", "react", "component"],
+  "author": "lmrp",
+  "homepage": "https://github.com/loumorganrene/react-mini-modal",
+  "version": "1.0.0",
   "type": "module",
   "files": [
     "dist"
