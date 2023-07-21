@@ -64,7 +64,7 @@ function Modal({
     }, [open])
 
     return open ? createPortal(
-        <div className='modal__background modal__background--blurry'>
+        <div className='modal__background'>
             <div
             ref={modalRef}
             className='modal__wrapper'

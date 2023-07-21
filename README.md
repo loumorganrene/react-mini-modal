@@ -1,17 +1,17 @@
-# React Mini Modal
+# React Mini Modal <!-- omit in toc -->
 
 React Mini Modal is a minimalist and easy-to-style modal component for React.
 
-## Table of Contents
+## My Table of Content <!-- omit in toc -->
 
-- [React Mini Modal](#react-mini-modal)
-  - [Table of Contents](#table-of-contents)
-  - [Installation](#installation)
-  - [Minimal Basic Usage](#minimal-basic-usage)
-  - [Modal Props](#modal-props)
-  - [Example with Button Component](#example-with-button-component)
-  - [Button Props](#button-props)
-  - [Advanced Styling](#advanced-styling)
+- [Installation](#installation)
+- [Minimal Basic Usage](#minimal-basic-usage)
+- [Modal Props](#modal-props)
+- [Example with Button Component](#example-with-button-component)
+- [Button Props](#button-props)
+- [Advanced Styling](#advanced-styling)
+  - [CSS Class Description](#css-class-description)
+  - [DOM Structure](#dom-structure)
 
 ## Installation
 
@@ -111,19 +111,26 @@ The `Button` component require only two props:
 
 Aside from using the provided styling props such as `color`, `width` or `backgroundColor`, the appearance of the `Modal` component can be customized using CSS classes. Here's the available BEM's CSS classes :
 
+### CSS Class Description
+
 | Class<div style="width:150px"></div>| Description    |
 | ----------------------------------- | -------------- |
+|`.modal__background`            | Styles the background overlay of the modal window. By default, it sets the coverage on the entire viewport and applies a blurry effect.|
 | `.modal__wrapper`              | Styles the modal wrapper element. By default, it positions the modal at the center of the screen and applies a box shadow.|
 | `.modal`                       | Styles the modal content container. By default, it sets the gap between elements and the font styling.|
+| `.modal__header`               | Styles the header of the modal. By default, it provided an empty space to displays the `title`.|
+| `.modal__title`                | Styles the title of the modal. By default, it's applied on a `h2`.|
+| `.modal__body`                 | Styles the body of the modal. By default, it provided an empty space to displays the `content`.|
+| `.modal__content`              | Styles the content of the modal. By default, it's applied on a `p`.|
+| `.modal__footer`               | Styles the footer of the modal. By default, it provided an empty space to displays buttons or elements added through the `footerButton` prop.|
 | `.modal__btn`                  | Styles this library `Button` component.|
 | `.modal__btn--close`           | Styles the close button icon. By default, it positions the icon at the top right corner of the modal.|
-| `.modal__footer`               | Styles the footer of the modal. By default, it provided an empty space to displays buttons or elements added through the `footerButton` prop.|
 
-Here's the full structure:
+### DOM Structure
 
 ```jsx
 <!-- Background Page Covering/Blurrying -->
-<div className='modal__background modal__background--blurry'>
+<div className='modal__background'>
             <div className='modal__wrapper'>
             <div className='modal'>
                 <!-- Close Icon -->
