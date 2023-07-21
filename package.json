@@ -7,6 +7,9 @@
       "type": "git",
       "url": "https://github.com/loumorganrene/react-mini-modal.git"
     },
+  "publishConfig": {
+    "@loumorganrene:registry": "https://npm.pkg.github.com"
+  },
   "homepage": "https://github.com/loumorganrene/react-mini-modal",
   "version": "1.0.0",
   "type": "module",
