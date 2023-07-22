@@ -1,5 +1,5 @@
 {
-  "name": "@loumorganrene/react-mini-modal",
+  "name": "react-mini-modal",
   "description": "A minimalist and easy-to-style modal React component",
   "keywords": ["modal", "react", "component"],
   "author": "lmrp",
@@ -7,9 +7,6 @@
       "type": "git",
       "url": "https://github.com/loumorganrene/react-mini-modal.git"
     },
-  "publishConfig": {
-    "@loumorganrene:registry": "https://npm.pkg.github.com"
-  },
   "homepage": "https://github.com/loumorganrene/react-mini-modal",
   "version": "1.0.0",
   "type": "module",
