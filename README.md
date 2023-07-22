@@ -26,7 +26,7 @@ npm install @loumorganrene/react-mini-modal
 Import `Modal` in your React component:
 
 ```jsx
-import Modal from 'react-mini-modal';
+import Modal from '@loumorganrene/react-mini-modal';
 ```
 
 Implement `Modal` in your React component:
@@ -74,7 +74,7 @@ The `Modal` component is distributed with a minimalist `Button` component to fac
 Import `Button` in your React component:
 
 ```jsx
-import Button from 'react-mini-modal';
+import Button from '@loumorganrene/react-mini-modal';
 ```
 
 Implement `Button` as the `footerButton` prop value of your `Modal` component:

@@ -11,9 +11,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/loumorganrene/react-mini-modal.git"
+    "url": "git+https://github.com/loumorganrene/react-mini-modal.git"
   },
-  "bugs": "https://github.com/loumorganrene/react-mini-modal/issues",
+  "bugs": {
+    "url": "https://github.com/loumorganrene/react-mini-modal/issues"
+  },
   "homepage": "https://github.com/loumorganrene/react-mini-modal#readme",
   "type": "module",
   "files": [
