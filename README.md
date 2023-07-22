@@ -18,7 +18,7 @@ React Mini Modal is a minimalist and easy-to-style modal component for React.
 You can install the `react-mini-modal` package using npm:
 
 ```bash
-npm install react-mini-modal
+npm install @loumorganrene/react-mini-modal
 ```
 
 ## Minimal Basic Usage
