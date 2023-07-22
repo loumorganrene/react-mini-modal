@@ -1,5 +1,5 @@
 {
-  "name": "react-mini-modal",
+  "name": "@loumorganrene/react-mini-modal",
   "description": "A minimalist and easy-to-style modal React component",
   "version": "0.0.1",
   "keywords": [
@@ -13,7 +13,8 @@
     "type": "git",
     "url": "https://github.com/loumorganrene/react-mini-modal.git"
   },
-  "homepage": "https://github.com/loumorganrene/react-mini-modal",
+  "bugs": "https://github.com/loumorganrene/react-mini-modal/issues",
+  "homepage": "https://github.com/loumorganrene/react-mini-modal#readme",
   "type": "module",
   "files": [
     "dist"
