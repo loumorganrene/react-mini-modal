@@ -1,7 +1,7 @@
 {
   "name": "react-mini-modal",
   "description": "A minimalist and easy-to-style modal React component",
-  "version": "0.0.0-development",
+  "version": "0.0.1",
   "keywords": [
     "modal",
     "react",
@@ -34,8 +34,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "commit": "git-cz",
-    "semantic-release": "semantic-release --branches main"
+    "commit": "git-cz"
   },
   "devDependencies": {
     "@types/node": "^20.4.4",
@@ -45,7 +44,6 @@
     "@typescript-eslint/parser": "^5.59.0",
     "@vitejs/plugin-react-swc": "^3.0.0",
     "cz-conventional-changelog": "^3.3.0",
-    "semantic-release": "^21.0.7",
     "typescript": "^5.0.2",
     "vite": "^4.3.9",
     "vite-plugin-dts": "^3.1.1"
