@@ -2,6 +2,12 @@
 
 React Mini Modal is a minimalist and easy-to-style modal component for React.
 
+### Prerequisites
+
+- [Node.js (Version 18.16.0)](https://nodejs.org/en/)
+- [NPM](https://www.npmjs.com/)
+- *(Recommended IDE)* [VSCode](https://code.visualstudio.com/)
+
 ## My Table of Content <!-- omit in toc -->
 
 - [Installation](#installation)
